@@ -1,0 +1,629 @@
+/* ===================================
+   RESET
+=================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===================================
+   BODY
+=================================== */
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, #EEF2FF, #F8FAFC, #FFF7ED);
+    min-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===================================
+   PAGE
+=================================== */
+
+.page {
+    position: absolute;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    transition: 0.8s ease;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(.95);
+}
+
+.show {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+/* ===================================
+   CARD
+=================================== */
+
+
+.card{
+
+    width:90%;
+    max-width:700px;
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.12);
+
+    animation:fadeUp .8s ease;
+
+    transition:.4s;
+
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* ===================================
+   TYPOGRAPHY
+=================================== */
+
+.date {
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    margin-bottom: 20px;
+
+    background: #EEF2FF;
+
+    color: #4F46E5;
+
+    border-radius: 999px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 48px;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #4F46E5;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 30px;
+
+    color: #666;
+
+    margin-bottom: 35px;
+}
+
+/* ===================================
+   BUTTON
+=================================== */
+
+button {
+    padding: 16px 38px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background: #4F46E5;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+    box-shadow: 0 10px 25px rgba(79,70,229,.35);
+}
+
+button:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 18px 35px rgba(79,70,229,.45);
+}
+
+#nextBtn {
+    display: none;
+    margin-top: 25px;
+}
+
+/* ===================================
+   CAKE
+=================================== */
+
+.cake {
+    font-size: 70px;
+
+    margin-bottom: 20px;
+
+    animation: float 3s ease-in-out infinite;
+}
+
+/* ===================================
+   PROGRESS BAR
+=================================== */
+
+.progress {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background: linear-gradient(
+        90deg,
+        #4F46E5,
+        #06B6D4,
+        #10B981
+    );
+
+    animation: loading 5s linear infinite;
+}
+
+/* ===================================
+   BACKGROUND BLOBS
+=================================== */
+
+.blob {
+    position: fixed;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: .45;
+
+    z-index: -1;
+
+    animation: blobMove 12s ease-in-out infinite alternate;
+}
+
+.blob1 {
+    width: 250px;
+    height: 250px;
+
+    background: #8B5CF6;
+
+    top: -50px;
+    left: -50px;
+}
+
+.blob2 {
+    width: 250px;
+    height: 250px;
+
+    background: #3B82F6;
+
+    bottom: -70px;
+    right: -70px;
+}
+
+/* ===================================
+   ANIMATIONS
+=================================== */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes loading {
+
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+
+}
+
+@keyframes blobMove {
+
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(40px, -30px);
+    }
+
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media (max-width: 768px) {
+
+    .card {
+        padding: 35px 25px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .cake {
+        font-size: 60px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+}
+
+#letterText{
+
+    margin-top:25px;
+
+    text-align:left;
+
+    line-height:34px;
+
+}
+
+#finishBtn{
+
+    margin-top:40px;
+
+}
+/* =========================
+   Gift Animation
+========================= */
+
+.gift-container{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+background:rgba(255,255,255,.95);
+
+z-index:999;
+
+}
+
+.gift-box{
+
+position:relative;
+
+width:180px;
+
+height:180px;
+
+animation:giftFloat 2s infinite ease-in-out;
+
+}
+
+.box{
+
+position:absolute;
+
+bottom:0;
+
+width:180px;
+
+height:120px;
+
+background:#6366F1;
+
+border-radius:10px;
+
+}
+
+.box::before{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:22px;
+
+height:120px;
+
+background:#FBBF24;
+
+}
+
+.lid{
+
+position:absolute;
+
+top:20px;
+
+width:190px;
+
+height:45px;
+
+left:-5px;
+
+background:#4F46E5;
+
+border-radius:10px;
+
+transform-origin:left center;
+
+transition:1s;
+
+}
+
+.lid::before{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:22px;
+
+height:45px;
+
+background:#FBBF24;
+
+}
+
+.gift-open .lid{
+
+transform:
+rotate(-35deg)
+translateY(-25px);
+
+}
+
+@keyframes giftFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+/* =========================
+   Floating Balloons
+========================= */
+
+.balloons{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+
+.balloons span{
+
+position:absolute;
+
+bottom:-150px;
+
+font-size:45px;
+
+animation:floatBalloon linear infinite;
+
+opacity:.85;
+
+}
+
+/* Posisi tiap balon */
+
+.balloons span:nth-child(1){
+
+left:8%;
+animation-duration:12s;
+animation-delay:0s;
+
+}
+
+.balloons span:nth-child(2){
+
+left:25%;
+animation-duration:16s;
+animation-delay:2s;
+
+}
+
+.balloons span:nth-child(3){
+
+left:45%;
+animation-duration:13s;
+animation-delay:1s;
+
+}
+
+.balloons span:nth-child(4){
+
+left:63%;
+animation-duration:17s;
+animation-delay:4s;
+
+}
+
+.balloons span:nth-child(5){
+
+left:80%;
+animation-duration:14s;
+animation-delay:2s;
+
+}
+
+.balloons span:nth-child(6){
+
+left:92%;
+animation-duration:15s;
+animation-delay:5s;
+
+}
+
+@keyframes floatBalloon{
+
+0%{
+
+transform:translateY(0) rotate(0deg);
+
+}
+
+50%{
+
+transform:translateY(-50vh) rotate(8deg);
+
+}
+
+100%{
+
+transform:translateY(-120vh) rotate(-8deg);
+
+}
+
+}
+
+/* =========================
+   Gallery
+========================= */
+
+.gallery-card{
+
+    max-width:800px;
+
+}
+
+#galleryImage{
+
+    width:100%;
+
+    height:420px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+
+    transition:.8s;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+#galleryTitle{
+
+    color:#444;
+
+    font-size:26px;
+
+    font-weight:600;
+
+    line-height:40px;
+
+}
